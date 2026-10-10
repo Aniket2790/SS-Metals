@@ -77,7 +77,7 @@ export default function HomePage() {
       <section className="section">
         <div className="wrap grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
-            <h2 className="h-section">Pioneering branded and unfinished steelware in India</h2>
+            <h2 className="h-section">Pioneering branded and unfinished steelware in Moradabad</h2>
             <p className="mt-4 text-steel-700">
               {SITE.name} is a well-known steelware manufacturer providing premium branded
               stainless steel kitchenware in India and export markets. Established in {SITE.est},
