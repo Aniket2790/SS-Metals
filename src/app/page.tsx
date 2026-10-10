@@ -6,7 +6,7 @@ import { GRADES, INFRA, MANUFACTURED_LINES, SITE, STATS, SUPPLIED_LINES, waLink 
 
 export default function HomePage() {
   const popular = getPopularProducts(8);
-  const yearsTrust = 33;
+  const yearsTrust = SITE.yearsInBusiness;
 
   return (
     <>
@@ -92,7 +92,7 @@ export default function HomePage() {
             </p>
             <div className="mt-5 grid gap-3 sm:grid-cols-3">
               {[
-                [`Since ${SITE.est}`, "Three decades of stainless steelware manufacturing."],
+                [`Since ${SITE.est}`, "Over two decades of stainless steelware manufacturing."],
                 ["ISO aligned", "International quality management systems."],
                 ["Export quality", "Kalvat products customised for global exporters."],
               ].map(([t, d]) => (

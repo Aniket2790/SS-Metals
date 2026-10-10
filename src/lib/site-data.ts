@@ -1,7 +1,7 @@
 export const site = {
   name: "SS Metals",
   tagline: "Utensils & Farma Manufacturers · Pipes, Tubes & Metal Suppliers",
-  established: "1993",
+  established: "2000",
   proprietor: "Mr. Pradeep Kumar Agarwal",
   specialty:
     "Manufacturers of stainless steel utensils and farma design; suppliers of pipes, tubes, flanges, round bars, non-ferrous metals, scrap, and related industrial products.",
@@ -125,7 +125,7 @@ export const highlights = [
 ] as const;
 
 export const stats = [
-  { value: "33+", label: "Years of experience" },
+  { value: "26+", label: "Years of experience" },
   { value: "40+", label: "Countries served worldwide" },
   { value: "1500+", label: "Metric tonnes in stock" },
   { value: "50+", label: "Industries served" },
@@ -382,7 +382,7 @@ export const readyStockItems = [
 ] as const;
 
 export const whyChooseUs = [
-  "33+ years serving Moradabad industry (since 1993)",
+  "26+ years serving Moradabad industry (since 2000)",
   "ISO 9001:2008 certified quality with strict testing",
   "Wide material range from carbon steel to exotic alloys",
   "Ready stock for quick and immediate delivery",

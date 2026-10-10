@@ -27,7 +27,7 @@ export default function CompanyProfilePage() {
         <div className="wrap py-14 sm:py-16">
           <h1 className="h-page">Company profile</h1>
           <p className="mt-4 max-w-2xl text-lg text-steel-200">
-            Over three decades of manufacturing stainless steelware in the brass city of Moradabad.
+            Over two decades of manufacturing stainless steelware in the brass city of Moradabad.
           </p>
         </div>
       </section>

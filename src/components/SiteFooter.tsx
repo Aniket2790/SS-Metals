@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FOOTER_RANGES, NAV, SITE } from "@/lib/site";
+import { supplierNavItems } from "@/lib/supplier-pages";
 
 export default function SiteFooter() {
   return (
@@ -29,7 +30,7 @@ export default function SiteFooter() {
           </ul>
         </div>
         <div>
-          <h4 className="font-display text-lg font-semibold text-white">Product ranges</h4>
+          <h4 className="font-display text-lg font-semibold text-white">Manufactured ranges</h4>
           <ul className="mt-3 space-y-2 text-sm">
             {FOOTER_RANGES.map((r) => (
               <li key={r}>
@@ -38,6 +39,16 @@ export default function SiteFooter() {
                   className="hover:text-white"
                 >
                   {r}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <h4 className="mt-6 font-display text-lg font-semibold text-white">Supplier lines</h4>
+          <ul className="mt-3 space-y-2 text-sm">
+            {supplierNavItems.map((r) => (
+              <li key={r.slug}>
+                <Link href={`/supplier/${r.slug}`} className="hover:text-white">
+                  {r.label}
                 </Link>
               </li>
             ))}

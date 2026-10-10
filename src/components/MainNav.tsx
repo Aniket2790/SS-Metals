@@ -3,7 +3,20 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { NavMenuDropdown } from "@/components/nav/NavMenuDropdown";
+import { PRODUCT_CATEGORIES } from "@/lib/catalogue-data";
 import { NAV, SITE, waLink } from "@/lib/site";
+import { supplierNavItems } from "@/lib/supplier-pages";
+
+const productMenuItems = PRODUCT_CATEGORIES.map((category) => ({
+  label: category,
+  href: `/products?category=${encodeURIComponent(category)}`,
+}));
+
+const supplierMenuItems = supplierNavItems.map((item) => ({
+  label: item.label,
+  href: `/supplier/${item.slug}`,
+}));
 
 export default function MainNav() {
   const path = usePathname();
@@ -29,7 +42,35 @@ export default function MainNav() {
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
-          {NAV.map((n) => (
+          {NAV.slice(0, 2).map((n) => (
+            <Link
+              key={n.href}
+              href={n.href}
+              aria-current={active(n.href) ? "page" : undefined}
+              className={`rounded px-3 py-2 text-sm font-medium ${
+                active(n.href)
+                  ? "bg-brand-light text-brand-dark"
+                  : "text-steel-700 hover:text-brand"
+              }`}
+            >
+              {n.label}
+            </Link>
+          ))}
+          <NavMenuDropdown
+            label="Products"
+            allHref="/products"
+            allLabel="All products (catalogue)"
+            pathPrefix="/products"
+            items={productMenuItems}
+          />
+          <NavMenuDropdown
+            label="Supplier"
+            allHref="/supplier"
+            allLabel="All supplier lines"
+            pathPrefix="/supplier"
+            items={supplierMenuItems}
+          />
+          {NAV.slice(2).map((n) => (
             <Link
               key={n.href}
               href={n.href}
@@ -67,10 +108,10 @@ export default function MainNav() {
         </button>
       </div>
 
-      {open && (
+      {open ? (
         <nav
           id="mobile-nav"
-          className="border-t border-steel-200 bg-white lg:hidden"
+          className="max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-steel-200 bg-white lg:hidden"
           aria-label="Mobile"
         >
           <div className="wrap flex flex-col py-2">
@@ -82,6 +123,39 @@ export default function MainNav() {
                 className={`border-b border-steel-100 py-3 text-base font-medium ${active(n.href) ? "text-brand" : ""}`}
               >
                 {n.label}
+              </Link>
+            ))}
+            <p className="pt-3 text-xs font-bold uppercase tracking-wider text-steel-500">
+              Products
+            </p>
+            <Link
+              href="/products"
+              className="border-b border-steel-100 py-2.5 text-sm font-semibold"
+              onClick={() => setOpen(false)}
+            >
+              All products
+            </Link>
+            {productMenuItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="border-b border-steel-100 py-2.5 pl-3 text-sm"
+                onClick={() => setOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <p className="pt-3 text-xs font-bold uppercase tracking-wider text-steel-500">
+              Supplier
+            </p>
+            {supplierMenuItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="border-b border-steel-100 py-2.5 pl-3 text-sm"
+                onClick={() => setOpen(false)}
+              >
+                {item.label}
               </Link>
             ))}
             <div className="flex gap-2 py-3">
@@ -98,7 +172,7 @@ export default function MainNav() {
             </div>
           </div>
         </nav>
-      )}
+      ) : null}
     </header>
   );
 }

@@ -1,10 +1,11 @@
 // Company details — edit here and the whole site updates (SS Metals branding).
 export const SITE = {
   name: "SS Metals",
-  est: 1993,
+  est: 2000,
+  yearsInBusiness: 26,
   tagline: "Utensils & Farma Manufacturers · Industrial Metal Suppliers — Moradabad",
   description:
-    "SS Metals (Est. 1993) — manufacturers of stainless steel utensils and farma design; wholesalers and suppliers of pipes, tubes, flanges, round bars, fasteners, perforated sheets, coils, scrap, and non-ferrous metals in Moradabad.",
+    "SS Metals (Est. 2000) — manufacturers of stainless steel utensils and farma design; wholesalers and suppliers of pipes, tubes, flanges, round bars, fasteners, perforated sheets, coils, scrap, and non-ferrous metals in Moradabad.",
   email: "enquiry@ssmetals.in",
   address:
     "Sri Radha Krishna Complex, Old Rampur Road, Near Bus Stand, Moradabad, Uttar Pradesh 244001, India",
@@ -31,7 +32,6 @@ export const SUPPLIED_LINES = [
 export const NAV = [
   { href: "/", label: "Home" },
   { href: "/company-profile", label: "Company Profile" },
-  { href: "/products", label: "Products" },
   { href: "/ready-stock", label: "Ready Stock" },
   { href: "/infrastructure", label: "Infrastructure" },
   { href: "/contact", label: "Enquiry & Contact" },
