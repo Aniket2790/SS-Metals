@@ -1,10 +1,10 @@
 export const site = {
   name: "SS Metals",
-  tagline: "Pipes, Tubes, Round Bars & Flanges — Manufacturer & Supplier",
+  tagline: "Utensils & Farma Manufacturers · Pipes, Tubes & Metal Suppliers",
   established: "1993",
   proprietor: "Mr. Pradeep Kumar Agarwal",
   specialty:
-    "Wholesaler and supplier of non-ferrous metals, scrap, and manufactured stainless steel items like ice buckets and water jugs.",
+    "Manufacturers of stainless steel utensils and farma design; suppliers of pipes, tubes, flanges, round bars, non-ferrous metals, scrap, and related industrial products.",
   email: "enquiry@ssmetals.in",
   phones: ["+91 9412236335", "+91 9458771652"],
   address:
@@ -14,7 +14,7 @@ export const site = {
 
 export const aboutShowcase = {
   src: "/about/ss-metals-showcase.jpg",
-  alt: "SS Metals — precision pipes and tubes manufacturer, quality, and industries served",
+  alt: "SS Metals — utensils and farma manufacturing, industrial metal supply",
 } as const;
 
 export const heroCarouselSlides = [
@@ -79,7 +79,7 @@ export const navLinks = [
 export const heroSpotlights = [
   {
     title: "Pipes & Tubes",
-    headline: "Manufacturer and supplier in India",
+    headline: "Supplier in India — ready stock",
     description:
       "Alloy steel, Alloy 20, carbon steel seamless, 3LPE coated pipes, and stainless seamless lines for demanding industrial applications.",
     href: "/products",
@@ -110,7 +110,7 @@ export const highlights = [
   {
     title: "Top-quality",
     description:
-      "ISO-certified manufacturing and export of precision-tested pipes, tubes, flanges, bars, and sheets with MTC documentation.",
+      "Manufactured utensils and farma; supplied pipes, tubes, flanges, bars, and sheets with MTC documentation where applicable.",
   },
   {
     title: "Customized solutions",
@@ -120,7 +120,7 @@ export const highlights = [
   {
     title: "Best price",
     description:
-      "Ready stock and custom manufacturing at competitive pricing with reliable pan-India and export dispatch.",
+      "Ready stock on supplied lines and custom utensil/farma programs at competitive pricing with reliable dispatch.",
   },
 ] as const;
 
@@ -382,11 +382,11 @@ export const readyStockItems = [
 ] as const;
 
 export const whyChooseUs = [
-  "33+ years of manufacturing excellence (since 1993)",
+  "33+ years serving Moradabad industry (since 1993)",
   "ISO 9001:2008 certified quality with strict testing",
   "Wide material range from carbon steel to exotic alloys",
   "Ready stock for quick and immediate delivery",
-  "Custom manufacturing as per required specifications",
+  "Custom farma design and utensil programs to drawing",
 ] as const;
 
 export const industriesServed = [

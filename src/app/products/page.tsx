@@ -1,27 +1,32 @@
 import type { Metadata } from "next";
-import { PageBanner } from "@/components/banner/PageBanner";
-import { ProductCatalogSection } from "@/components/home/ProductCatalogSection";
-import { ProductLinesSection } from "@/components/home/ProductLinesSection";
-import { innerPageBanners } from "@/lib/page-banners";
+import { Suspense } from "react";
+import ProductCatalogue from "@/components/ProductCatalogue";
+import ProductCatalogueFromQuery from "@/components/ProductCatalogueFromQuery";
+import { getAllProducts } from "@/lib/static-catalog";
 
-const banner = innerPageBanners.products;
-
-export const metadata: Metadata = {
-  title: "Products | SS Metals",
-  description: banner.subtitle,
-};
+export const metadata: Metadata = { title: "Products Catalogue" };
 
 export default function ProductsPage() {
+  const products = getAllProducts();
+
   return (
     <>
-      <PageBanner
-        variant={banner.variant}
-        eyebrow={banner.eyebrow}
-        title={banner.title}
-        subtitle={banner.subtitle}
-      />
-      <ProductLinesSection />
-      <ProductCatalogSection />
+      <section className="bg-ink text-white">
+        <div className="wrap py-14 sm:py-16">
+          <h1 className="h-page">Products catalogue</h1>
+          <p className="mt-4 max-w-2xl text-lg text-steel-200">
+            Unfinished Kalvat utensils, barware, bathware and kitchenware. Ask for custom sizes and
+            weights.
+          </p>
+        </div>
+      </section>
+      <section className="section">
+        <div className="wrap">
+          <Suspense fallback={<ProductCatalogue products={products} initialCategory="All" />}>
+            <ProductCatalogueFromQuery products={products} />
+          </Suspense>
+        </div>
+      </section>
     </>
   );
 }

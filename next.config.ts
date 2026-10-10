@@ -1,7 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      { source: "/about", destination: "/company-profile", permanent: true },
+      { source: "/industries", destination: "/products", permanent: false },
+      { source: "/quality", destination: "/infrastructure", permanent: false },
+    ];
+  },
   cacheComponents: true,
   partialPrefetching: true,
   reactCompiler: true,
